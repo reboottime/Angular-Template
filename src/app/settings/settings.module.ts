@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SettingsRoutingModule } from './settings-routing.module';
 
@@ -8,6 +9,7 @@ import { SettingsRoutingModule } from './settings-routing.module';
   declarations: [],
   imports: [
     CommonModule,
+    HttpClientModule,
     SettingsRoutingModule
   ]
 })

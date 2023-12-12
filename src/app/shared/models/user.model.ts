@@ -3,12 +3,14 @@ export class User {
   firstName: string;
   lastName: string;
   roles: UserRole[];
+  organizationId: string;
 
   constructor() {
     this.email = '';
     this.firstName = '';
     this.lastName = '';
     this.roles = [];
+    this.organizationId = '';
   }
 }
 
