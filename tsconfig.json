@@ -28,7 +28,7 @@
       "@guards/*": ["app/shared/guards/*"],
       "@models/*": ["app/shared/models/*"],
       "@services/*": ["app/shared/services/*"],
-      "@state/*": ["app/shared/state/*"],
+      "@store/*": ["app/shared/store/*"],
     }
   },
   "angularCompilerOptions": {
