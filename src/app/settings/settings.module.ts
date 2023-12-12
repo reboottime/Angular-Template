@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SettingsRoutingModule } from './settings-routing.module';
 import { ProfileComponent } from './profile/profile.component';
@@ -17,6 +18,7 @@ import { DevelopersComponent } from './developers/developers.component';
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     SettingsRoutingModule
   ]
