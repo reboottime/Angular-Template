@@ -2,42 +2,25 @@
 <!-- app.component.html or any appropriate template file -->
 
 <nav class="bg-gray-800 p-4" *ngIf="user">
-  <div class="flex items-center justify-between">
-    <h4 class="text-white font-bold">Settings</h4>
-    <ul class="flex space-x-4">
-      <li>
-        <a
-          routerLink="app/settings/profile"
-          routerLinkActive="text-yellow-500"
-          class="text-white"
-          >Profile</a>
-      </li>
-      <li>
-        <a
-          routerLink="app/settings/organization"
-          routerLinkActive="text-yellow-500"
-          class="text-white"
-          >Organization</a
+  <ul class="m-0 p-0">
+    <li *ngFor="let appModule of appModules" class="cursor-pointer">
+      <h4 [routerLink]="appModule.path">{{ appModule.title }}</h4>
+      <ul *ngIf="appModule.childModules.length">
+        <li
+          class="cursor-pointer"
+          *ngFor="let childModule of appModule.childModules"
+          [routerLink]="childModule.path"
         >
-      </li>
-      <li>
-        <a
-          routerLink="app/settings/billings"
+          <a
+          [routerLink]="childModule.path"
           routerLinkActive="text-yellow-500"
           class="text-white"
-          >Billings</a
-        >
-      </li>
-      <li>
-        <a
-          routerLink="app/settings/developers"
-          routerLinkActive="text-yellow-500"
-          class="text-white"
-          >Developers</a
-        >
-      </li>
-    </ul>
-  </div>
+            >{{ childModule.title }}</a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul> 
 </nav>
 
 <!-- Add a router outlet to display the corresponding component based on the route -->

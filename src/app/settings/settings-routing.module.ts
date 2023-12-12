@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { RolesGuard } from '@guards/roles.guard';
+import { UserRole } from '@models/user.model';
+
 import { ProfileComponent } from './profile/profile.component';
 import { BillingsComponent } from './billings/billings.component';
 import { DevelopersComponent } from './developers/developers.component';
@@ -24,17 +27,21 @@ export const routes: Routes = [
     pathMatch: 'full',
     component: OrganizationComponent,
     title: 'Organization',
+    data: { roles: [UserRole.Admin] },
+    canActivate: [RolesGuard],
   },
   {
     path: 'billings',
     pathMatch: 'full',
     component: BillingsComponent,
+    data: { roles: [UserRole.Admin] },
     title: 'Billings',
   },
   {
     path: 'developers',
     pathMatch: 'full',
     component: DevelopersComponent,
+    data: { roles: [UserRole.Developer] },
     title: 'Developers',
   },
 ];
