@@ -1,1 +1,61 @@
-<p>profile works!</p>
+<!-- profile.component.html -->
+
+<form (ngSubmit)="onFormSubmit()" class="max-w-md mx-auto mt-6">
+    <div class="mb-4">
+      <label for="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        formControlName="firstName"
+        class="w-full border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+        required
+      />
+    </div>
+  
+    <div class="mb-4">
+      <label for="lastName" class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        formControlName="lastName"
+        class="w-full border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+        required
+      />
+    </div>
+  
+    <div class="mb-4">
+      <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        formControlName="email"
+        class="w-full border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+        required
+      />
+    </div>
+  
+    <div class="mb-4">
+      <label for="roles" class="block text-gray-700 text-sm font-bold mb-2">Roles</label>
+      <select
+        id="roles"
+        name="roles"
+        formControlName="roles"
+        class="w-full border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+        required
+      >
+        <option [value]="1">Basic</option>
+        <option [value]="2">Developer</option>
+        <option [value]="3">Admin</option>
+      </select>
+    </div>
+    <button
+      type="submit"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+    >
+      Update Profile
+    </button>
+  </form>
+  
