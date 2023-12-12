@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
@@ -10,7 +10,7 @@ import { UserRole } from '@models/user.model';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })
-export class ProfileComponent implements AfterViewInit {
+export class ProfileComponent implements OnInit {
   // Init form value and setup field validator
   userForm = this.formBuilder.group({
     firstName: ['', Validators.required],
@@ -25,7 +25,7 @@ export class ProfileComponent implements AfterViewInit {
     private store: Store<AppState>
   ) {}
 
-  ngAfterViewInit() {
+  ngOnInit() {
     this.store.select('auth').subscribe((data) => {
       if (data.user) {
         // populate form value
