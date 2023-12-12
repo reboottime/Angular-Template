@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 
 import { AppState } from '@models/app-state.model';
 import * as authActions from '@store/auth.actions';
-import { UserRole } from '@models/user.model';
+import { User, UserRole } from '@models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +17,10 @@ export class AuthService {
 
   logoutUser() {
     this.store.dispatch(authActions.logout());
+  }
+
+  hasRequiredRoles(user: User, roles: UserRole[]) {
+    return roles.every(role => user.roles.includes(role));
   }
 }
 
