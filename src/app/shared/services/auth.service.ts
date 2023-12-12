@@ -25,4 +25,5 @@ const FAKE_USER = {
   firstName: 'Angular',
   lastName: 'SPA',
   roles: [1, 3],
+  organizationId: '',
 };
