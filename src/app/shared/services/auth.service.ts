@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 
 import { AppState } from '@models/app-state.model';
 import * as authActions from '@store/auth.actions';
+import { UserRole } from '@models/user.model';
 
 @Injectable({
   providedIn: 'root',
