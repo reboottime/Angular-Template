@@ -25,6 +25,7 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["app/shared/components/*"],
+      "@environments/*": ["environments/*"],
       "@guards/*": ["app/shared/guards/*"],
       "@models/*": ["app/shared/models/*"],
       "@services/*": ["app/shared/services/*"],
