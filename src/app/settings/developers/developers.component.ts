@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-developers',
-  standalone: true,
-  imports: [],
+  selector: 'developers',
   templateUrl: './developers.component.html',
   styleUrl: './developers.component.scss'
 })

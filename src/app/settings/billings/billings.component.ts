@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-billings',
-  standalone: true,
-  imports: [],
+  selector: 'billings',
   templateUrl: './billings.component.html',
   styleUrl: './billings.component.scss'
 })
