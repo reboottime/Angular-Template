@@ -15,12 +15,11 @@ export class ApiInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any> {
     const url = this.getRequestUrl(req.url);
-
-    const authReq = req.clone({
+    const clonedReq = req.clone({
       url,
     });
 
-    return next.handle(authReq).pipe(
+    return next.handle(clonedReq).pipe(
       map((event) => {
         // You can perform some logic with the response here if needed
         console.log('Response intercepted:', event);
